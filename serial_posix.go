@@ -1,3 +1,4 @@
+//go:build darwin || linux || freebsd || openbsd || netbsd
 // +build darwin linux freebsd openbsd netbsd
 
 package serial
@@ -10,6 +11,8 @@ import (
 	"syscall"
 	"time"
 	"unsafe"
+
+	"golang.org/x/sys/unix"
 )
 
 // port implements Port interface.
